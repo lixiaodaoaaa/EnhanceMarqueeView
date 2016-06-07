@@ -1,7 +1,7 @@
-# MarqueeView
+# EnhanceMarqueeView
 
-俗名：垂直跑马灯  
-学名：垂直翻页公告
+俗名：增强版  |  垂直跑马灯  
+学名：增强版  |  垂直翻页公告
 
 ### 效果图
 
@@ -23,7 +23,7 @@
 | mvTextColor         | 文字颜色          |
 
 #### XML
-
+```
     <com.sunfusheng.marqueeview.MarqueeView
         android:id="@+id/marqueeView"
         android:layout_width="match_parent"
@@ -32,44 +32,48 @@
         app:mvInterval="3000"
         app:mvTextColor="@color/white"
         app:mvTextSize="14sp"/>
+ ```
 
 #### 设置列表数据
-
+```
     MarqueeView marqueeView = (MarqueeView) findViewById(R.id.marqueeView);
-
-    List<String> info = new ArrayList<>();
-    info.add("1. 大家好，我是孙福生。");
-    info.add("2. 欢迎大家关注我哦！");
-    info.add("3. GitHub帐号：sfsheng0322");
-    info.add("4. 新浪微博：孙福生微博");
-    info.add("5. 个人博客：sunfusheng.com");
-    info.add("6. 微信公众号：孙福生");
-    marqueeView.startWithList(info);
-
+        HashMap<String,View.OnClickListener> noticeListenerMap =new LinkedHashMap<>();
+        noticeListenerMap.put("lixiaodaoaaa001 is a goodboy", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "you click first", Toast.LENGTH_SHORT).show();
+            }
+        });
+        noticeListenerMap.put("lixiaodaoaaa002", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "you click 002", Toast.LENGTH_SHORT).show();
+            }
+        });
+        noticeListenerMap.put("lixiaodaoaaa003", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "you click 003", Toast.LENGTH_SHORT).show();
+            }
+        });
+        noticeListenerMap.put("lixiaodaoaaa004", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "you click 004", Toast.LENGTH_SHORT).show();
+            }
+        });
+```
 #### 设置字符串数据
 
     String notice = "心中有阳光，脚底有力量！心中有阳光，脚底有力量！心中有阳光，脚底有力量！";
     marqueeView.startWithText(notice);
 
 
-### [APK下载地址](http://fir.im/MarqueeView)
-
-### 微信公众号
-
-<img src="https://github.com/sfsheng0322/StickyHeaderListView/blob/master/screenshots/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7.jpg" style="width: 30%;">
 
 ### 关于我
 
-个人邮箱：sfsheng0322@126.com
-
-[GitHub主页](https://github.com/sfsheng0322)
-
-[简书主页](http://www.jianshu.com/users/88509e7e2ed1/latest_articles)
-
-[个人博客](http://sunfusheng.com/)
-
-[新浪微博](http://weibo.com/u/3852192525)
-
+感觉此篇文章对你有用，可以打赏博主少许银两 支持博主努力创作！ 
+![](http://img.blog.csdn.net/20160607170944494)
 License
 --
     Copyright (C) 2016 sfsheng0322@gmail.com
